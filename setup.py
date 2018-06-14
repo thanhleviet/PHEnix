@@ -29,10 +29,11 @@ def get_version():
 
 # At the time of writing there is an open issue on pip > 6.0
 #    Where session is required parameter. Breaks backwards compatibility.
-if int(pip.__version__.split(".")[0]) >= 6:
-    install_reqs = parse_requirements('requirements.txt', session=False)
-else:
-    install_reqs = parse_requirements('requirements.txt')
+# if int(pip.__version__.split(".")[0]) >= 6:
+#     install_reqs = parse_requirements('requirements.txt', session=False)
+# else:
+
+install_reqs = parse_requirements('requirements.txt')
 
 install_requires = [str(ir.req) for ir in install_reqs]
 
