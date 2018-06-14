@@ -8,7 +8,12 @@ import os
 import sys
 
 import pip
-from pip.req import parse_requirements
+# from pip.req import parse_requirements
+
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
 
 def get_version():
     version_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), "VERSION")
