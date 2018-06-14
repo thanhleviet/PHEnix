@@ -35,7 +35,8 @@ def get_version():
 
 install_reqs = parse_requirements('requirements.txt')
 
-install_requires = [str(ir.req) for ir in install_reqs]
+# install_requires = [str(ir.req) for ir in install_reqs]
+install_requires = install_reqs
 
 setup(name='PHEnix',
       version=get_version(),
